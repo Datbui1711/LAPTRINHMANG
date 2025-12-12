@@ -109,23 +109,6 @@ Bạn có thể mở nhiều terminal để chạy nhiều client.
   - Typing indicators
   - Emoji picker
 
-### Console Chat Server (`chat_server.py`)
-
-- **ChatServer class**: Quản lý tất cả kết nối client
-  - `handle_client()`: Xử lý từng client connection
-  - `broadcast()`: Gửi tin nhắn đến tất cả client
-  - `remove_client()`: Xóa client khi ngắt kết nối
-  
-- **Bất đồng bộ**: Sử dụng `asyncio.start_server()` để lắng nghe kết nối
-- **Thread-safe**: Sử dụng `asyncio.Lock()` để bảo vệ shared state
-
-### Console Chat Client (`chat_client.py`)
-
-- **ChatClient class**: Quản lý kết nối đến server
-  - `receive_messages()`: Task nhận tin nhắn từ server
-  - `send_messages()`: Task gửi input của user đến server
-  - `connect()`: Kết nối và điều phối các task
-
 ## 🛡️ Xử lý lỗi
 
 - ✅ Xử lý client ngắt kết nối đột ngột
